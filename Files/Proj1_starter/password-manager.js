@@ -14,7 +14,7 @@ const MAX_PASSWORD_LENGTH = 64;   // we can assume no password is longer than th
 /********* Implementation ********/
 class Keychain {
   /**
-   * Initializes the keychain using the provided information. Note that external
+   * Initializes the keychain using the provided information. Note that external.
    * users should likely never invoke the constructor directly and instead use
    * either Keychain.init or Keychain.load. 
    * Arguments:
@@ -46,12 +46,13 @@ class Keychain {
     * Loads the keychain state from the provided representation (repr). The
     * repr variable will contain a JSON encoded serialization of the contents
     * of the KVS (as returned by the dump function). The trustedDataCheck
-    * is an *optional* SHA-256 checksum that can be used to validate the 
+    * is an *optional* SHA-256 checksum that can be used to validate the
+    * converts buffer into a hexadecimal string.
     * integrity of the contents of the KVS. If the checksum is provided and the
     * integrity check fails, an exception should be thrown. You can assume that
     * the representation passed to load is well-formed (i.e., it will be
     * a valid JSON object).Returns a Keychain object that contains the data
-    * from repr. 
+    * from repr.
     *
     * Arguments:
     *   password:           string
@@ -75,7 +76,7 @@ class Keychain {
     * Returns a JSON serialization of the contents of the keychain that can be 
     * loaded back using the load function. The return value should consist of
     * an array of two strings:
-    *   arr[0] = JSON encoding of password manager
+    *   arr[0] = JSON encoding of password manager.
     *   arr[1] = SHA-256 checksum (as a string)
     * As discussed in the handout, the first element of the array should contain
     * all of the data in the password manager. The second element is a SHA-256
